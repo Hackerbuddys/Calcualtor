@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.text {
+  text-align: center;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+  border-radius: 10px;
+  /* max-width: 37vw; */
+  /*Viewport Width*/
+}
+
+.btn {
+  margin: 6px 6px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 60px;
+}
+
+.row {
+  padding: 8px 0;
+}
+
+.row input {
+  height: 33px;
+  width: 220px;
+  font-size: 17px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0;
+  padding: 6px 34px;
+}
