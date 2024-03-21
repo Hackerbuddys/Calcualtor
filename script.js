@@ -24,11 +24,33 @@ Array.from(buttons).forEach((button) => {
       string = string + e.target.innerHTML;
       document.querySelector("input").value = string;
     }
+    playClickSound();
   });
 });
 
 // Add an event listener for undoing the deletion
 document.querySelector("#undo").addEventListener("click", () => {
   string = previousString;
-  document.querySelector("input").value = string;
+  document.querySelector("#display").value = string;
+  // Play button click sound
+  playClickSound();
 });
+
+function playClickSound() {
+  const clickSound = new Audio("click-sound.mp3");
+
+  // Set the start point of the sound clip (in seconds)
+  const startPoint = 1; // Adjust this value as needed
+
+  // Set the stop point of the sound clip (in seconds)
+  const stopPoint = 1.2; // Adjust this value as needed
+
+  // Play the sound
+  clickSound.currentTime = startPoint;
+  clickSound.play();
+
+  // Stop the sound after the specified duration
+  setTimeout(() => {
+    clickSound.pause();
+  }, (stopPoint - startPoint) * 1000); // Convert seconds to milliseconds
+}

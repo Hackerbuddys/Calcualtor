@@ -15,6 +15,9 @@ body {
 }
 
 .container {
+  background-color: gray;
+  width: 336px;
+  height: 550px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -33,6 +36,12 @@ body {
   border-radius: 10px;
   cursor: pointer;
   width: 60px;
+  transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+.btn:hover {
+  background-color: #ccd5dc; /* Change to desired color on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+  transform: scale(1.05); /* Add scale effect on hover */
 }
 
 .row {
