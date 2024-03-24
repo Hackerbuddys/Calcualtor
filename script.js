@@ -5,7 +5,7 @@ let previousString = ""; // Store the previous string value
 Array.from(buttons).forEach((button) => {
   button.addEventListener("click", (e) => {
     if (e.target.innerHTML == "=") {
-      string = eval(string);
+      string = eval(string, playClickSound);
       document.querySelector("input").value = string;
     } else if (e.target.innerHTML == "AC") {
       string = "";
@@ -36,21 +36,8 @@ document.querySelector("#undo").addEventListener("click", () => {
   playClickSound();
 });
 
-function playClickSound() {
-  const clickSound = new Audio("click-sound.mp3");
-
-  // Set the start point of the sound clip (in seconds)
-  const startPoint = 1; // Adjust this value as needed
-
-  // Set the stop point of the sound clip (in seconds)
-  const stopPoint = 1.2; // Adjust this value as needed
-
-  // Play the sound
-  clickSound.currentTime = startPoint;
+function playClickSound(callback) {
+  const clickSound = new Audio("click-sound.Wav");
+  clickSound.onended = callback; // Execute the callback function after sound playback ends
   clickSound.play();
-
-  // Stop the sound after the specified duration
-  setTimeout(() => {
-    clickSound.pause();
-  }, (stopPoint - startPoint) * 1000); // Convert seconds to milliseconds
 }
